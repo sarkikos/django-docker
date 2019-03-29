@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./django
+    command: python /usr/src/mainproject/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django/mainproject/:/usr/src/mainproject/
+    ports:
+      - 8000:8000
