@@ -7,12 +7,9 @@ node {
         checkout scm
     }
 
-    stage('Build Docker image') {
+    stage('Build and push Docker image') {
         //docker.build docker_image
-        docker.build(docker_image, "./django")
-    }
-
-    stage('Push Docker image') {
-        docker.push(docker_image)
+        def newImage = docker.build(docker_image, "./django")
+        newImage.push()
     }
 }
