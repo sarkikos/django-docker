@@ -1,6 +1,6 @@
 node {
 //    def registry = "localhost:5000"
-    def registry = ${env.TEST_DOCKER_REGISTRY}
+    def registry = "${env.TEST_DOCKER_REGISTRY}"
     def imagename = "djangodocker"
     def docker_image = "${registry}/${imagename}:testing"
 
