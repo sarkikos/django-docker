@@ -4,6 +4,10 @@ node {
     def imagename = "djangodocker"
     def docker_image = "${registry}/${imagename}:testing"
 
+    stage('Print environment variables') {
+	echo sh(returnStdout: true, script: 'env')
+    }
+
     stage('Clone repository') {
         checkout scm
     }
