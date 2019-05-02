@@ -1,3 +1,4 @@
+# Devel version
 node {
 //    def registry = "localhost:5000"
     def registry = "${env.TEST_DOCKER_REGISTRY}"
